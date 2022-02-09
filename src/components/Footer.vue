@@ -9,9 +9,7 @@
               <a :href="comic.url">{{ comic.text }}</a>
             </li>
           </ul>
-        </nav>
 
-        <nav>
           <h4>SHOP</h4>
           <ul>
             <li v-for="(shop, index) in shop" :key="index">
@@ -37,8 +35,11 @@
             </li>
           </ul>
         </nav>
+
+        <div class="bg-dc">
+          <img class="logo-dc" src="../assets/dc-logo-bg.png" alt="Logo Dc" />
+        </div>
       </div>
-      <div class="bg-dc"></div>
     </div>
   </footer>
 </template>
@@ -95,27 +96,33 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 
+  .bg-dc {
+    position: relative;
+    left: 250px;
+  }
+
+  a {
+    color: #797979;
+    text-decoration: none;
+  }
   .position {
     display: flex;
-    flex-wrap: wrap;
 
     h4 {
+      padding: 40px 0;
+      font-size: 18px;
       color: white;
+    }
+
+    ul {
+      padding-right: 15px;
 
       li {
         list-style-type: none;
-
-        a {
-          color: lightslategray;
-          font-size: 12px;
-          text-decoration: none;
-        }
+        padding: 5px 0;
+        font-size: 12px;
       }
     }
   }
-}
-
-.bg-dc {
-  background-image: url("../assets/dc-logo-bg.png");
 }
 </style>
