@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Header />
+    <HeaderBottom />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import HeaderBottom from "./components/HeaderBottom.vue";
 
 export default {
   name: "App",
   components: {
     Header,
+    HeaderBottom,
   },
 };
 </script>
