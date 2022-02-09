@@ -3,6 +3,7 @@
     <Header />
     <HeaderBottom />
     <MainTop />
+    <Footer />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Header from "./components/Header.vue";
 import HeaderBottom from "./components/HeaderBottom.vue";
 import MainTop from "./components/MainTop.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     Header,
     HeaderBottom,
     MainTop,
+    Footer,
   },
 };
 </script>
