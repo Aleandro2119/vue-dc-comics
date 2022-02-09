@@ -2,18 +2,21 @@
   <div id="app">
     <Header />
     <HeaderBottom />
+    <MainTop />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
 import HeaderBottom from "./components/HeaderBottom.vue";
+import MainTop from "./components/MainTop.vue";
 
 export default {
   name: "App",
   components: {
     Header,
     HeaderBottom,
+    MainTop,
   },
 };
 </script>
