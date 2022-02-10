@@ -1,71 +1,76 @@
 <template>
-  <header>
+  <main>
     <div class="container">
       <nav>
         <ul>
-          <li>
+          <li v-for="shop in shops" :key="shop.text">
             <a href="#"
-              ><img
-                src="../assets/buy-comics-digital-comics.png"
-                alt="Comics Digital"
-              />
-              <span>DIGITAL COMICS</span>
+              ><img :src="require(`../assets/${shop.image}`)" alt="Shop" />
+              <span>{{ shop.text }}</span>
             </a>
-          </li>
-          <li>
-            <a href="#"
-              ><img
-                src="../assets/buy-comics-merchandise.png"
-                alt="Merchandise"
-              />
-              <span>DC MERCHANDISE</span></a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><img
-                src="../assets/buy-comics-subscriptions.png"
-                alt="Subscriptions"
-              />
-              <span>SUBSCRIPTIONS</span></a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><img
-                src="../assets/buy-comics-shop-locator.png"
-                alt="Shop locator"
-              />
-              <span>COMICS SHOP LOCATOR</span></a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><img src="../assets/buy-dc-power-visa.svg" alt="Power Visa" />
-              <span>DC POWER VISA</span></a
-            >
           </li>
         </ul>
       </nav>
     </div>
-  </header>
+  </main>
 </template>
 
 <script>
 export default {
   name: "MainTop",
+
+  data() {
+    return {
+      shops: [
+        {
+          text: "DIGITAL COMICS",
+          image: "buy-comics-digital-comics.png",
+          url: "#",
+        },
+        {
+          text: "DC MERCHANDISE",
+          image: "buy-comics-merchandise.png",
+          url: "#",
+        },
+        {
+          text: "SUBSCRIPTION",
+          image: "buy-comics-subscriptions.png",
+          url: "#",
+        },
+        {
+          text: "COMIC SHOP LOCATOR",
+          image: "buy-comics-shop-locator.png",
+          url: "#",
+        },
+        {
+          text: "DC POWER VISA",
+          image: "buy-dc-power-visa.svg",
+          url: "#",
+        },
+      ],
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-header {
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+main {
   background-color: #0282f9;
   padding: 10px;
 
   ul {
     display: flex;
     align-items: center;
-    list-style-type: none;
+
+    li {
+      list-style-type: none;
+      padding: 40px;
+    }
 
     a {
       display: flex;
@@ -74,8 +79,13 @@ header {
       color: white;
       font-size: 12px;
 
+      span {
+        padding-left: 5px;
+        font-size: 12px;
+      }
+
       img {
-        width: 15%;
+        width: 25%;
       }
     }
   }
